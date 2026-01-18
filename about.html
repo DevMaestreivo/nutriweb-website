@@ -1,0 +1,363 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Healthy Food Landing Page - Bootstrap</title>
+    <!-- Bootstrap CSS CDN -->
+     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+     <link rel="stylesheet" href="css/bootstrap.min (1).css">
+    <!-- Google Fonts: Inter -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+       
+</head>
+<body class="antialiased" >
+    <div class="content-wrapper">
+        <!-- Header & Hero Section Container -->
+        <div class="container-fluid">
+            <div class="container py-5">
+                <!-- Header: Logo and Navigation -->
+             <nav class="glass-navbar">
+            <div class="navbar-content">
+                <!-- Logo -->
+                    <div class="navbar-logo">
+                        <a href="index.html" class="logo-link">
+                            <img src="media/icon.png" alt="Logo" onerror="this.style.display='none'; this.nextElementSibling.style.display='inline';">
+                            <span style="display:none; color: #fbbf24; font-size: 1.5rem;">🌱</span>
+                        </a>
+                    </div>
+                    
+                <!-- Navigation Links in Glass Container -->
+                       <div class="navbar-links" id="navbarLinks">
+                    <a href="index.html" class="nav-link ">Home</a>
+                    <a href="about.html" class="nav-link active">About Me</a>
+                    <a href="packages.html" class="nav-link">Packages</a>
+                    <a href="clients.html" class="nav-link">Clients</a>
+                    <a href="#footer" class="nav-link">Contact Me</a>
+                </div>
+                
+                <!-- Mobile Menu Toggle -->
+                <button class="mobile-toggle" id="mobileToggle">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+            </div>
+            </nav>
+
+
+                <!-- Profile Image Section -->
+                <div class="profile-container" data-aos="zoom-out-up">
+                    <img src="media/me1.png" alt="Profile Picture" 
+                         onerror="this.onerror=null;this.src='https://placehold.co/300x400/227186/FFFFFF?text=Profile+Photo';">
+                </div>
+
+                <!-- Experience Section -->
+                <div class="experience-section">
+                    <h2 class="section-header" data-aos="zoom-out-up">Professional Experience & Credentials</h2>
+                    
+                    <!-- First Row -->
+                    <div class="row mb-4">
+                        <div class="col-lg-4 col-md-6 mb-3"  data-aos="zoom-out-up">
+                            <div class="experience-card" data-bs-toggle="modal" data-bs-target="#clinicalModal">
+                                <div class="card-icon">🏥</div>
+                                <h5>Clinical Nutrition Training</h5>
+                                <div class="institution">Al Moalmeen Hospital</div>
+                                <p>Completed 150 working hours in ICUs focusing on clinical nutrition protocols and patient care management.</p>
+                            </div>
+                        </div>
+                        
+                        <div class="col-lg-4 col-md-6 mb-3"  data-aos="zoom-out-up">
+                            <div class="experience-card" data-bs-toggle="modal" data-bs-target="#nutritionistModal">
+                                <div class="card-icon">🎓</div>
+                                <h5>Certified Nutritionist</h5>
+                                <div class="institution">British University in Egypt (BUE)</div>
+                                <p>Comprehensive nutrition science certification covering metabolic processes, dietary planning, and health optimization.</p>
+                            </div>
+                        </div>
+                        
+                        <div class="col-lg-4 col-md-6 mb-3" data-aos="zoom-out-up">
+                            <div class="experience-card" data-bs-toggle="modal" data-bs-target="#dietitianModal">
+                                <div class="card-icon">📊</div>
+                                <h5>Certified Dietitian</h5>
+                                <div class="institution">IAO University (MU)</div>
+                                <p>Advanced dietetic practice certification focusing on therapeutic nutrition and clinical applications.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Second Row -->
+                    <div class="row">
+                        <div class="col-lg-4 col-md-6 mb-3" data-aos="zoom-out-up">
+                            <div class="experience-card" data-bs-toggle="modal" data-bs-target="#technologyModal">
+                                <div class="card-icon">💻</div>
+                                <h5>Technology Specialization</h5>
+                                <div class="institution">American Council</div>
+                                <p>Certified in technological applications for nutrition, including digital health tools and nutrition software.</p>
+                            </div>
+                        </div>
+                        
+                        <div class="col-lg-4 col-md-6 mb-3" data-aos="zoom-out-up">
+                            <div class="experience-card" data-bs-toggle="modal" data-bs-target="#conferenceModal">
+                                <div class="card-icon">🎯</div>
+                                <h5>PHocus Conference</h5>
+                                <div class="institution">EPSF 2023-2024</div>
+                                <p>Active participation in professional healthcare conferences focusing on latest nutrition research and practices.</p>
+                            </div>
+                        </div>
+
+                        <div class="col-lg-4 col-md-6 mb-3" data-aos="zoom-out-up">
+                            <div class="experience-card" data-bs-toggle="modal" data-bs-target="#AclmModal">
+                                <div class="card-icon">📊</div>
+                                <h5> Certified Lifestyle Medicine</h5>
+                                <div class="institution">Professional Nutrition Services</div>
+                                <p>Let's work together to achieve your health and nutrition goals with personalized care and expertise.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- MODALS -->
+    <!-- Modal for Clinical Training -->
+    <div class="modal fade" id="clinicalModal" tabindex="-1" aria-labelledby="clinicalModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="clinicalModalLabel">🏥 Clinical Nutrition Training</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <img src="media/ICUs.png" class="certificate-image" alt="Clinical Training Certificate">
+                    <h6 class="text-yellow">Al Moalmeen Hospital - ICU Department</h6>
+                    <p><strong>Duration:</strong> 150 working hours</p>
+                    <p><strong>Focus Areas:</strong></p>
+                    <ul>
+                        <li>Critical care nutrition management</li>
+                        <li>Enteral and parenteral nutrition protocols</li>
+                        <li>Metabolic monitoring in ICU patients</li>
+                        <li>Multidisciplinary team collaboration</li>
+                        <li>Clinical documentation and assessment</li>
+                    </ul>
+                    <p><strong>Skills Acquired:</strong> Advanced clinical nutrition assessment, therapeutic diet planning for critical patients, and hands-on experience with nutrition support in intensive care settings.</p>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-yellow" data-bs-dismiss="modal">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal for Nutritionist Certification -->
+    <div class="modal fade" id="nutritionistModal" tabindex="-1" aria-labelledby="nutritionistModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="nutritionistModalLabel">🎓 Certified Nutritionist</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <img src="media/Bue.jpg" class="certificate-image" alt="BUE Nutritionist Certificate">
+                    <h6 class="text-yellow">British University in Egypt (BUE)</h6>
+                    <p><strong>Program Highlights:</strong></p>
+                    <ul>
+                        <li>Human nutrition and metabolism</li>
+                        <li>Nutritional biochemistry</li>
+                        <li>Community nutrition programs</li>
+                        <li>Food science and safety</li>
+                        <li>Research methodology in nutrition</li>
+                    </ul>
+                    <p><strong>Practical Experience:</strong> Extensive hands-on training in nutritional assessment, meal planning, and client consultation techniques.</p>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-yellow" data-bs-dismiss="modal">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal for Dietitian Certification -->
+    <div class="modal fade" id="dietitianModal" tabindex="-1" aria-labelledby="dietitianModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="dietitianModalLabel">📊 Certified Dietitian</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <img src="media/IAO.jpg" class="certificate-image" alt="MU Dietitian Certificate">
+                    <h6 class="text-yellow">IAO University (MU)</h6>
+                    <p><strong>Specialization Areas:</strong></p>
+                    <ul>
+                        <li>Therapeutic nutrition and medical nutrition therapy</li>
+                        <li>Clinical dietetics and patient care</li>
+                        <li>Nutrition counseling and education</li>
+                        <li>Menu planning and food service management</li>
+                        <li>Nutrition intervention strategies</li>
+                    </ul>
+                    <p><strong>Clinical Competencies:</strong> Advanced skills in managing nutrition-related diseases, creating personalized meal plans, and providing evidence-based nutrition counseling.</p>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-yellow" data-bs-dismiss="modal">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal for Technology Specialization -->
+    <div class="modal fade" id="technologyModal" tabindex="-1" aria-labelledby="technologyModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="technologyModalLabel">💻 Technology Specialization</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <img src="media/AEMRICAN COUNCIL.JPG" class="certificate-image" alt="American Council Technology Certificate">
+                    <h6 class="text-yellow">American Council - Technological Apps for Nutrition</h6>
+                    <p><strong>Technology Integration:</strong></p>
+                    <ul>
+                        <li>Digital nutrition assessment tools</li>
+                        <li>Mobile health (mHealth) applications</li>
+                        <li>Nutrition tracking and monitoring software</li>
+                        <li>Telehealth nutrition counseling platforms</li>
+                        <li>Data analysis for nutrition outcomes</li>
+                    </ul>
+                    <p><strong>Modern Approach:</strong> Leveraging cutting-edge technology to enhance nutrition services, improve client engagement, and deliver personalized nutrition solutions.</p>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-yellow" data-bs-dismiss="modal">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal for Conference Participation -->
+    <div class="modal fade" id="conferenceModal" tabindex="-1" aria-labelledby="conferenceModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="conferenceModalLabel">🎯 PHocus Conference</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <img src="media/PHOCUS.JPG" class="certificate-image" alt="PHocus Conference Certificate">
+                    <h6 class="text-yellow">EPSF - PHocus Conference 2023-2024</h6>
+                    <p><strong>Conference Highlights:</strong></p>
+                    <ul>
+                        <li>Latest research in nutrition science</li>
+                        <li>Evidence-based practice updates</li>
+                        <li>Professional networking and collaboration</li>
+                        <li>Innovative nutrition interventions</li>
+                        <li>Continuing education and professional development</li>
+                    </ul>
+                    <p><strong>Commitment to Excellence:</strong> Active participation in professional conferences demonstrates dedication to staying current with the latest developments in nutrition and healthcare.</p>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-yellow" data-bs-dismiss="modal">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <!--MODAL for ACLM  -->
+    <div class="modal fade" id="AclmModal" tabindex="-1" aria-labelledby="clinicalModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="clinicalModalLabel">📊 Certified Lifestyle Medicine</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <img src="media/ACLM.png" class="certificate-image" alt="Clinical Training Certificate">
+                    <h6 class="text-yellow">Lifestyle Medicine & Food as Medicine Essentials Course Bundle</h6>
+                    <!-- <p><strong>Duration:</strong> 150 working hours</p> -->
+                    <p><strong>Specialization Areas:</strong></p>
+                    <ul>
+                        <li>Lifestyle medicine fundamentals</li>
+                        <li>Food as medicine concepts</li>
+                        <li>Evidence-based nutrition strategies</li>
+                        <li>Preventive and patient-centered care</li>
+                        <li>Practical application in healthcare and wellness</li>
+                    </ul>
+                    <p><strong>Skills Acquired: </strong> Demonstrates a strong commitment to preventive healthcare, continuous learning, and the application of lifestyle medicine principles to improve individual and community health outcomes.</p>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-yellow" data-bs-dismiss="modal">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Glass Footer -->
+    <footer class="glass-footer" id="footer">
+        <div class="container footer-container">
+            <!-- Footer Brand Section -->
+            <div class="footer-brand">
+                <div class="footer-logo">
+                    <img src="media/icon.png" alt="Logo" onerror="this.style.display='none'; this.nextElementSibling.style.display='inline';">
+                    <span style="display:none; font-size: 1.5rem;">🌱</span>
+                </div>
+                <h3 class="footer-brand-name">DT. Ahmed Ayman</h3>
+                <p class="footer-tagline">Your Trusted Nutrition Partner for a Healthier Tomorrow</p>
+            </div>
+
+            <!-- Contact Information -->
+            <div class="contact-info">
+                <a href="mailto:dt.ahmedayman@email.com" class="contact-item">
+                    <div class="contact-icon">✉</div>
+                    <span class="contact-text">ahmedaymaan101@email.com</span>
+                </a>
+                <a href="https://wa.me/201093191277" class="contact-item">
+                    <div class="contact-icon">📞</div>
+                    <span class="contact-text" >+20 109 319 1277</span>
+                </a>
+                <div class="contact-item">
+                    <div class="contact-icon">📍</div>
+                    <span class="contact-text">El-Mahlla El-Kubra, Egypt</span>
+                </div>
+            </div>
+
+            <!-- Social Media Links -->
+            <div class="social-links">
+                <a href="https://www.facebook.com/elgentel.ayman.7?locale=ar_AR" class="social-link" title="Facebook">
+                    <i class="bi bi-facebook fs-4"></i>
+                </a>
+                <a href="https://www.instagram.com/dt.ahmedayman?igsh=NGlhbmRiNWM2eGV3&utm_source=qr" class="social-link" title="Instagram">
+                    <i class="bi bi-instagram fs-4"></i>
+                </a>
+                <a href="https://wa.me/201093191277" class="social-link" title="WhatsApp">
+                    <i class="bi bi-whatsapp fs-4"></i>
+                </a>
+                <a href="https://www.linkedin.com/in/dt-ahmed-ayman-b19603341?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app" class="social-link" title="LinkedIn">
+                    <i class="bi bi-linkedin fs-4"></i>
+                </a>
+            </div>
+
+            <!-- Footer Bottom -->
+            <div class="footer-bottom">
+                <p class="footer-copyright">
+                    © 2024 Dr. Ahmed Ayman - Certified Nutritionist & Dietitian
+                </p>
+                <p class="footer-credits">
+                    Professional Nutrition Services • <a href="#privacy">Privacy Policy</a> • <a href="#terms">Terms of Service</a>
+                </p>
+            </div>
+        </div>
+    </footer>
+    <!-- Bootstrap JS Bundle -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous">
+    </script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+  AOS.init();
+</script>
+    <script src="js/javascript.js"></script>
+</body>
+</html>

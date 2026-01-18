@@ -1,0 +1,359 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>باقات التغذية - د. أحمد أيمن</title>
+    <!-- Bootstrap CSS CDN -->
+     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css">
+     <!-- Font Awesome 5 (Free) -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <!-- Font Awesome 6 (Free) -->
+     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Google Fonts: Readex Pro for Arabic -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Readex+Pro:wght@200;300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/bootstrap.min (1).css">
+    <link rel="stylesheet" href="css/style.css">
+    
+<style>
+       
+    </style>
+</head>
+
+<body>
+       <!-- Navigation -->
+   <nav class="glass-navbar">
+            <div class="navbar-content">
+                <!-- Navigation Links in Glass Container -->
+                <div class="navbar-links" id="navbarLinks">
+                    <a href="#footer" class="nav-link">Contact Me</a>
+                    <a href="clients.html" class="nav-link">Clients</a>
+                    <a href="packages.html" class="nav-link active">Packages</a>
+                    <a href="about.html" class="nav-link">About Me</a>
+                    <a href="index.html" class="nav-link ">Home</a>
+                </div>
+                <!-- Mobile Menu Toggle -->
+                    <button class="mobile-toggle" id="mobileToggle">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </button>
+                
+                <!-- Logo --> 
+                <div class="navbar-logo">
+                    <a href="index.html" class="logo-link">
+                        <img src="media/icon.png" alt="Logo" onerror="this.style.display='none'; this.nextElementSibling.style.display='inline';">
+                        <span style="display:none; color: #fbbf24; font-size: 1.5rem;">🌱</span>
+                    </a>
+                </div>
+                </div>
+         </nav>
+
+    <!-- Packages Section -->
+    <section class="packages-section ">
+        <div class="container">
+            <!-- Section Title -->
+            <div class="section-title">
+                <h1>اختر الباقة المناسبة لك</h1>
+                <p>خطط غذائية مصممة خصيصاً لتحقيق أهدافك الصحية مع متابعة مهنية متخصصة</p>
+            </div>
+
+            <!-- Packages Row -->
+            <div class="row">
+                <!-- Standard Package -->
+                <div class="col-lg-4 col-md-6 my-4">
+                    <div class="package-card" data-package="standard">
+                        <div class="package-header">
+                            <div class="package-badge">Standard</div>
+                            <h3 class="package-title">الباقة الأساسية</h3>
+                            <p class="package-subtitle">بخطة بسيطة وفعالة</p>
+                        </div>
+
+                        <div class="package-price">
+                            <span class="price-amount">599 <span class="price-currency">جنيه</span></span>
+                            <span class="price-period">شهرياً</span>
+                            
+                            <div class="price-discount" id="discount-standard">
+                                <div class="original-price">599 جنيه</div>
+                                <div class="discounted-price">390 جنيه</div>
+                                <div class="discount-amount">خصم 210 جنيه</div>
+                            </div>
+                        </div>
+
+                        <div class="package-features">
+                            <div class="feature-item d-flex flex-row align-items-center">
+                                <span class="feature-icon">✓</span>
+                                <span class="feature-text">برنامج غذائي محسوب بدقة لاحتياج جسمك وهدفك</span>
+                            </div>
+                            <div class="feature-item d-flex flex-row align-items-center ">
+                                <span class="feature-icon">✓</span>
+                                <span class="feature-text">نظام مرن يناسب طبيعة أكلك ويومك</span>
+                            </div>
+                            <div class="feature-item d-flex flex-row align-items-center">
+                                <span class="feature-icon">✓</span>
+                                <span class="feature-text">تعديل كل أسبوعين حسب التقدم</span>
+                            </div>
+                        </div>
+
+                        <div class="package-footer">
+                            <p class="package-description">
+                                مثالية لأي شخص يريد أن يبدأ خطوة بخطوة من غير تعقيد
+                            </p>
+                            <button class="btn-package" onclick="contactPackage('standard')">
+                                <i class="bi bi-telephone-fill"></i>
+احجز الان                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- PRO Package -->
+                <div class="col-lg-4 col-md-6 my-4">
+                    <div class="package-card featured" data-package="pro">
+                        <div class="package-header">
+                            <div class="package-badge">الأكثر شعبية</div>
+                            <h3 class="package-title">PRO</h3>
+                            <p class="package-subtitle">لو محتاج دعم حقيقي ومتابعة شخصية أسبوعية</p>
+                        </div>
+
+                        <div class="package-price">
+                            <span class="price-amount">749 <span class="price-currency">جنيه</span></span>
+                            <span class="price-period">شهرياً</span>
+                            
+                            <div class="price-discount" id="discount-pro">
+                                <div class="original-price">749 جنيه</div>
+                                <div class="discounted-price">525 جنيه</div>
+                                <div class="discount-amount">خصم 225 جنيه</div>
+                            </div>
+                        </div>
+
+                        <div class="package-features">
+                            <div class="feature-item d-flex flex-row align-items-center">
+                                <span class="feature-icon">✓</span>
+                                <span class="feature-text">برنامج غذائي محسوب حسب هدفك بدقة</span>
+                            </div>
+                            <div class="feature-item d-flex flex-row align-items-center">
+                                <span class="feature-icon">✓</span>
+                                <span class="feature-text">مكالمة أسبوعية لمتابعة الوزن والقياسات بشكل منتظم</span>
+                            </div>
+                            <div class="feature-item d-flex flex-row align-items-center">
+                                <span class="feature-icon">✓</span>
+                                <span class="feature-text">تعديل الخطة حسب تغيرات يومك أو جدولك أو حالتك النفسية</span>
+                            </div>
+                        </div>
+
+                        <div class="package-footer">
+                            <p class="package-description">
+                                هذه الباقة لك إذا كنت تقع بسرعة ومحتاج شخص معك خطوة بخطوة
+                            </p>
+                            <button class="btn-package" onclick="contactPackage('pro')">
+                                <i class="bi bi-telephone-fill"></i>
+احجز الان                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- VIP Package -->
+                <div class="col-lg-4 col-md-6 my-4 mx-auto">
+                    <div class="package-card" data-package="vip">
+                        <div class="package-header">
+                            <div class="package-badge">VIP</div>
+                            <h3 class="package-title">الباقة المميزة</h3>
+                            <p class="package-subtitle">لو عايز نتيجة سريعة وخدمة شخصية جداً</p>
+                        </div>
+
+                        <div class="package-price">
+                            <span class="price-amount">899 <span class="price-currency">جنيه</span></span>
+                            <span class="price-period">شهرياً</span>
+                            
+                            <div class="price-discount" id="discount-vip">
+                                <div class="original-price">899 جنيه</div>
+                                <div class="discounted-price">675 جنيه</div>
+                                <div class="discount-amount">خصم 225 جنيه</div>
+                            </div>
+                        </div>
+
+                        <div class="package-features">
+                            <div class="feature-item d-flex flex-row align-items-center">
+                                <span class="feature-icon">✓</span>
+                                <span class="feature-text">كل مزايا باقة PRO</span>
+                            </div>
+                            <div class="feature-item d-flex flex-row align-items-center">
+                                <span class="feature-icon">✓</span>
+                                <span class="feature-text">متابعة يومية على واتساب</span>
+                            </div>
+                            <div class="feature-item d-flex flex-row align-items-center">
+                                <span class="feature-icon">✓</span>
+                                <span class="feature-text">تعديل النظام أكثر من مرة أسبوعياً حسب استجابتك</span>
+                            </div>
+                            <div class="feature-item d-flex flex-row align-items-center">
+                                <span class="feature-icon">✓</span>
+                                <span class="feature-text">تعليم مبسط لمفاهيم الأكل الصحي عشان تكون فاهم مش حافظ</span>
+                            </div>
+                            <div class="feature-item d-flex flex-row align-items-center">
+                                <span class="feature-icon">✓</span>
+                                <span class="feature-text">تحفيز مستمر + حلول سريعة لأي طوارئ</span>
+                            </div>
+                        </div>
+
+                        <div class="package-footer">
+                            <button class="btn-package" onclick="contactPackage('vip')">
+                                <i class="bi bi-telephone-fill"></i>
+احجز الان                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <div class="promo-section">
+        <div class="container">
+            <div class="promo-container">
+                <!-- Header -->
+                <div class="promo-header">
+                    <div class="promo-badge">عرض خاص</div>
+                    <h1 class="promo-title">احصل على خصم فوري</h1>
+                    <p class="promo-subtitle">اختر باقتك أولاً ثم استخدم كود الخصم المناسب لها</p>
+                </div>
+
+                <!-- Package Selection -->
+                <div class="package-selector">
+                    <h3 class="selector-title">اختر الباقة المطلوبة</h3>
+                    <div class="package-options">
+                        <div class="package-option" data-package="standard" onclick="selectPackage('standard')">
+                            الأساسية<br>
+                            <small>599 جنيه</small>
+                        </div>
+                        <div class="package-option selected" data-package="pro" onclick="selectPackage('pro')">
+                            PRO<br>
+                            <small>749 جنيه</small>
+                        </div>
+                        <div class="package-option" data-package="vip" onclick="selectPackage('vip')">
+                            VIP<br>
+                            <small>899 جنيه</small>
+                        </div>
+                    </div>
+                </div>
+
+                
+                <!-- Available Codes -->
+                <div class="available-codes">
+                    <h3 class="codes-title">الأكواد المتاحة للباقة المحددة</h3>
+                    <div class="codes-grid" id="codesGrid">
+                        <!-- Codes will be populated by JavaScript -->
+                    </div>
+                </div>
+                
+                <div class="promo-code-section">
+                    <div class="code-input-group">
+                        <input type="text" class="promo-input" id="promoInput" placeholder="أدخل كود الخصم هنا" maxlength="20">
+                        <button class="btn-apply" id="applyBtn">
+                            <span class="btn-text">تطبيق</span>
+                            <a href=""></a>
+                        </button>
+                    </div>
+                    <div class="message" id="message"></div>
+                </div>
+                <!-- Contact Section -->
+                <div class="text-center mt-4">
+                    <p style="color: rgba(255, 255, 255, 0.8); margin-bottom: 1.5rem;">
+                        هل تحتاج مساعدة؟ تواصل معنا الآن
+                    </p>
+                    <button class="btn-apply" onclick="contactWithCurrentSelection()" style="text-decoration: none;">
+                        <i class="bi bi-telephone-fill"></i>
+احجز الان                            </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="glass-footer" id="footer">
+        <div class="container footer-container">
+            <!-- Footer Brand Section -->
+            <div class="footer-brand">
+                <div class="footer-logo">
+                    <img src="media/icon.png" alt="Logo" onerror="this.style.display='none'; this.nextElementSibling.style.display='inline';">
+                    <span style="display:none; font-size: 1.5rem;">🌱</span>
+                </div>
+                <h3 class="footer-brand-name">DT. Ahmed Ayman</h3>
+                <p class="footer-tagline">Your Trusted Nutrition Partner for a Healthier Tomorrow</p>
+            </div>
+
+            <!-- Contact Information -->
+            <div class="contact-info">
+                <a href="mailto:dt.ahmedayman@email.com" class="contact-item">
+                    <div class="contact-icon">✉</div>
+                    <span class="contact-text">ahmedaymaan101@email.com</span>
+                </a>
+                <a href="https://wa.me/201093191277" class="contact-item">
+                    <div class="contact-icon">📞</div>
+                    <span class="contact-text" >+20 109 319 1277</span>
+                </a>
+                <div class="contact-item">
+                    <div class="contact-icon">📍</div>
+                    <span class="contact-text">El-Mahlla El-Kubra, Egypt</span>
+                </div>
+            </div>
+
+            <!-- Social Media Links -->
+            <div class="social-links">
+                <a href="https://www.facebook.com/elgentel.ayman.7?locale=ar_AR" class="social-link" title="Facebook">
+                    <i class="bi bi-facebook fs-4"></i>
+                </a>
+                <a href="https://www.instagram.com/dt.ahmedayman?igsh=NGlhbmRiNWM2eGV3&utm_source=qr" class="social-link" title="Instagram">
+                    <i class="bi bi-instagram fs-4"></i>
+                </a>
+                <a href="https://wa.me/201093191277" class="social-link" title="WhatsApp">
+                    <i class="bi bi-whatsapp fs-4"></i>
+                </a>
+                <a href="https://www.linkedin.com/in/dt-ahmed-ayman-b19603341?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app" class="social-link" title="LinkedIn">
+                    <i class="bi bi-linkedin fs-4"></i>
+                </a>
+            </div>
+
+            <!-- Footer Bottom -->
+            <div class="footer-bottom">
+                <p class="footer-copyright">
+                    © 2024 Dr. Ahmed Ayman - Certified Nutritionist & Dietitian
+                </p>
+                <p class="footer-credits">
+                    Professional Nutrition Services • <a href="#privacy">Privacy Policy</a> • <a href="#terms">Terms of Service</a>
+                </p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Bootstrap JS Bundle -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous">
+    </script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+   <script src="js/javascript.js">
+ 
+        function contactPackage(packageType) {
+    const packageData = packages[packageType];
+    let message = `السلام عليكم، أريد الاستفسار عن ${packageData.name} بسعر ${packageData.price} جنيه شهرياً`;
+
+    const storedDiscount = sessionStorage.getItem('appliedDiscount');
+    if (storedDiscount) {
+        const discountData = JSON.parse(storedDiscount);
+        if (discountData.package === packageType) {
+            message += `\n\nتم تطبيق كود الخصم: ${discountData.code}`;
+            message += `\nالسعر الأصلي: ${discountData.originalPrice} جنيه`;
+            message += `\nالسعر بعد الخصم: ${discountData.finalPrice} جنيه`;
+            message += `\nمقدار الخصم: ${discountData.amount} جنيه (${discountData.percentage}%)`;
+        }
+    }
+
+    const phoneNumber = '201093191277';
+    const whatsappUrl = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`;
+    window.open(whatsappUrl, '_blank');
+}
+    </script>
+</body>
+</html>

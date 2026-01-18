@@ -1,0 +1,327 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Healthy Food Landing Page - Bootstrap</title>
+    <!-- Bootstrap CSS CDN -->
+     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css">
+     <link rel="stylesheet" href="css/bootstrap.min (1).css">
+     <link rel="stylesheet" href="css/style.css">
+     <!-- Font Awesome 5 (Free) -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <!-- Font Awesome 6 (Free) -->
+     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Google Fonts: Inter -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;800&display=swap" rel="stylesheet">
+
+</head>
+   <!-- Navigation -->
+   <nav class="glass-navbar">
+            <div class="navbar-content">
+                <!-- Logo -->
+                    <div class="navbar-logo">
+                        <a href="index.html" class="logo-link">
+                            <img src="media/icon.png" alt="Logo" onerror="this.style.display='none'; this.nextElementSibling.style.display='inline';">
+                            <span style="display:none; color: #fbbf24; font-size: 1.5rem;">🌱</span>
+                        </a>
+                    </div>
+                    
+                <!-- Navigation Links in Glass Container -->
+                <div class="navbar-links" id="navbarLinks">
+                    <a href="index.html" class="nav-link active">Home</a>
+                    <a href="about.html" class="nav-link">About Me</a>
+                    <a href="packages.html" class="nav-link">Packages</a>
+                    <a href="clients.html" class="nav-link">Clients</a>
+                    <a href="#footer" class="nav-link">Contact Me</a>
+                </div>
+                <!-- Mobile Menu Toggle -->
+                <button class="mobile-toggle" id="mobileToggle">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+            </div>
+                
+            </nav>
+            
+
+    <!-- Hero Section -->
+    <section id="home" class="hero-section mt-4">
+        <div class="bg-shapes"></div>
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-6">
+                    <div class="hero-content fade-in-up">
+                        <h1 class="hero-title readex-pro">
+                            Your Nutrition,<br> Your Lifestyle <br> "Anywhere, Anytime"
+                        </h1>
+                        <p class="hero-subtitle">
+                            Experience the future of healthcare with our innovative platform. 
+                            Personalized solutions, expert guidance, and cutting-edge technology 
+                            all in one place.
+                        </p>
+                        <div class="cta-buttons">
+                                <a href="packages.html" class="btn"> <button class="btn btn-primary-custom"> احجز مكانك الان</button></a>                         
+                                <a href="clients.html" class="btn">  <button class="btn btn-secondary-custom">FeedBacks</button></a>
+                         
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-6">
+                    <div class="hero-visual fade-in-up" style="animation-delay: 0.3s;">
+                        <div class="text-center">
+                <div class="profile-container" id="ahmed">
+                    <img src="media/me1.png" alt="Profile Picture"
+                         onerror="this.onerror=null;this.src='https://placehold.co/300x400/227186/FFFFFF?text=Profile+Photo';">
+                </div>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Stats Section -->
+    <section class="stats-section">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-3 col-6" data-aos="zoom-in">
+                    <div class="stat-item fade-in-up mb-3 ">
+                        <span class="stat-number">350+</span>
+                        <span class="stat-label">Happy Patients</span>
+                    </div>
+                </div>
+                <div class="col-md-3 col-6" data-aos="zoom-in">
+                    <div class="stat-item fade-in-up mb-3" style="animation-delay: 0.1s;">
+                        <span class="stat-number">24/7</span>
+                        <span class="stat-label">Support Available</span>
+                    </div>
+                </div>
+                <div class="col-md-3 col-6" data-aos="zoom-in">
+                    <div class="stat-item fade-in-up mb-3" style="animation-delay: 0.2s;">
+                        <span class="stat-number">98%</span>
+                        <span class="stat-label">Satisfaction Rate</span>
+                    </div>
+                </div>
+                <div class="col-md-3 col-6" data-aos="zoom-in">
+                    <div class="stat-item fade-in-up mb-3" style="animation-delay: 0.3s;">
+                        <span class="stat-number">2+</span>
+                        <span class="stat-label">Years of Experience</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section id="features" class="features-section">
+        <div class="container">
+            <div class="row mb-5" data-aos="zoom-in-up">
+                <div class="col-12">
+                    <h2 class="section-title fade-in-up">Why Choose Me?</h2>
+                    <p class="section-subtitle fade-in-up">
+                        Personalized nutrition plans. <br> Support & follow-up anytime, anywhere.
+                    </p>
+                </div>
+            </div>
+            <div class="row g-4 " >
+                <div class="col-lg-4 col-md-6 "  data-aos="fade-up">
+                    <div class="feature-card fade-in-up">
+                        <div class="feature-icon">
+                            <i class="fas fa-user-md"></i>
+                        </div>
+                        <h3 class="feature-title"> خطة شخصية</h3>
+                        <p class="feature-description">
+                           لكل شخص نظامه الغذائي الخاص اللي يناسب هدفه وظروفه.
+
+                        </p>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6"  data-aos="fade-up">
+                    <div class="feature-card fade-in-up" style="animation-delay: 0.1s;">
+                        <div class="feature-icon">
+                            <i class="fas fa-chart-line"></i>
+                        </div>
+                        <h3 class="feature-title">  متابعة دقيقة خطوة بخطوة</h3>
+                        <p class="feature-description">
+                            مش بس هسلمك نظام وأسكت! هنتابع مع بعض بشكل مستمر، نراجع التقدم، ونعدل الخطة عند الحاجة علشان نوصل لأفضل نتيجة..
+                        </p>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6"  data-aos="fade-up">
+                    <div class="feature-card fade-in-up" style="animation-delay: 0.2s;">
+                        <div class="feature-icon">
+                            <i class="fas fa-mobile-alt"></i>
+                        </div>
+                        <h3 class="feature-title">سهولة ومرونة في المتابعة</h3>
+                        <p class="feature-description">
+                            كل التفاصيل متاحة على موبايلك، تقدر تتابع نظامك في أي وقت ومن أي مكان، من غير ما تضيع وقتك في مشاوير أو ورق
+                        </p>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6"  data-aos="fade-up">
+                    <div class="feature-card fade-in-up" style="animation-delay: 0.3s;">
+                        <div class="feature-icon">
+                            <i class="fas fa-shield-alt"></i>
+                        </div>
+                        <h3 class="feature-title"> خصوصية وأمان كامل</h3>
+                        <p class="feature-description">
+                            بياناتك الطبية والشخصية في أمان تام، مفيش أي حد يطلع عليها غيري.
+
+                        </p>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6"  data-aos="fade-up">
+                    <div class="feature-card fade-in-up" style="animation-delay: 0.4s;">
+                        <div class="feature-icon">
+                            <i class="fas fa-calendar-check"></i>
+                        </div>
+                        <h3 class="feature-title"> مواعيد استشارة تناسبك</h3>
+                        <p class="feature-description">
+                           تقدر تختار وقت يناسب يومك عشان نعمل استشارة أونلاين من غير ما تعطل جدولك.
+                        </p>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6"  data-aos="fade-up">
+                    <div class="feature-card fade-in-up" style="animation-delay: 0.5s;">
+                        <div class="feature-icon">
+                            <i class="fas fa-users"></i>
+                        </div>
+                        <h3 class="feature-title"> دعم وتحفيز مستمر</h3>
+                        <p class="feature-description">
+                           أنا مش بديك خطة وبسيبك، أنا معاك في كل خطوة علشان تلاقي الدافع وتكمل لحد ما توصل لهدفك
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <!-- <section class="testimonials-section py-5">
+        <div class="container">
+            <div class="row mb-5"  data-aos="fade-up">
+                <div class="col-12">
+                    <h2 class="section-title fade-in-up">What Our Users Say</h2>
+                    <p class="section-subtitle fade-in-up">
+                        Real stories from real people who transformed their health with our platform.
+                    </p>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-lg-4 col-md-6 mb-4"  data-aos="fade-up">
+                    <div class="testimonial-card fade-in-up">
+                        <p class="testimonial-text">
+                            "This platform completely changed how I approach my health. The personalized insights are incredible!"
+                        </p>
+                        <div class="testimonial-author">
+                            <div class="author-avatar">S</div>
+                            <div class="author-info">
+                                <h6>Sarah Johnson</h6>
+                                <small>Health Enthusiast</small>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6 mb-4"  data-aos="fade-up">
+                    <div class="testimonial-card fade-in-up" style="animation-delay: 0.1s;">
+                        <p class="testimonial-text">
+                            "The expert consultations helped me understand my health better than ever before. Highly recommended!"
+                        </p>
+                        <div class="testimonial-author">
+                            <div class="author-avatar">M</div>
+                            <div class="author-info">
+                                <h6>Michael Chen</h6>
+                                <small>Software Engineer</small>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6 mb-4" data-aos="fade-up">
+                    <div class="testimonial-card fade-in-up" style="animation-delay: 0.2s;">
+                        <p class="testimonial-text">
+                            "Amazing user experience and the mobile app makes it so convenient to track my progress daily."
+                        </p>
+                        <div class="testimonial-author">
+                            <div class="author-avatar">E</div>
+                            <div class="author-info">
+                                <h6>Emily Rodriguez</h6>
+                                <small>Fitness Coach</small>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section> -->
+
+    <!-- Footer -->
+      <footer class="glass-footer" id="footer">
+        <div class="container footer-container">
+            <!-- Footer Brand Section -->
+            <div class="footer-brand">
+                <div class="footer-logo">
+                    <img src="media/icon.png" alt="Logo" onerror="this.style.display='none'; this.nextElementSibling.style.display='inline';">
+                    <span style="display:none; font-size: 1.5rem;">🌱</span>
+                </div>
+                <h3 class="footer-brand-name">DT. Ahmed Ayman</h3>
+                <p class="footer-tagline">Your Trusted Nutrition Partner for a Healthier Tomorrow</p>
+            </div>
+
+            <!-- Contact Information -->
+            <div class="contact-info">
+                <a href="mailto:dt.ahmedayman@email.com" class="contact-item">
+                    <div class="contact-icon">✉</div>
+                    <span class="contact-text">ahmedaymaan101@email.com</span>
+                </a>
+                <a href="https://wa.me/201093191277" class="contact-item">
+                    <div class="contact-icon">📞</div>
+                    <span class="contact-text" >+20 109 319 1277</span>
+                </a>
+                <div class="contact-item">
+                    <div class="contact-icon">📍</div>
+                    <span class="contact-text">El-Mahlla El-Kubra, Egypt</span>
+                </div>
+            </div>
+
+            <!-- Social Media Links -->
+            <div class="social-links">
+                <a href="https://www.facebook.com/elgentel.ayman.7?locale=ar_AR" class="social-link" title="Facebook">
+                    <i class="bi bi-facebook fs-4"></i>
+                </a>
+                <a href="https://www.instagram.com/dt.ahmedayman?igsh=NGlhbmRiNWM2eGV3&utm_source=qr" class="social-link" title="Instagram">
+                    <i class="bi bi-instagram fs-4"></i>
+                </a>
+                <a href="https://wa.me/201093191277" class="social-link" title="WhatsApp">
+                    <i class="bi bi-whatsapp fs-4"></i>
+                </a>
+                <a href="https://www.linkedin.com/in/dt-ahmed-ayman-b19603341?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app" class="social-link" title="LinkedIn">
+                    <i class="bi bi-linkedin fs-4"></i>
+                </a>
+            </div>
+
+            <!-- Footer Bottom -->
+            <div class="footer-bottom">
+                <p class="footer-copyright">
+                    © 2024 Dr. Ahmed Ayman - Certified Nutritionist & Dietitian
+                </p>
+                <p class="footer-credits">
+                    Professional Nutrition Services • <a href="#privacy">Privacy Policy</a> • <a href="#terms">Terms of Service</a>
+                </p>
+            </div>
+        </div>
+    </footer>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/js/bootstrap.bundle.min.js"></script>
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <script>
+  AOS.init();
+</script>
+    <script src="js/javascript.js"></script>
+
+</html>
