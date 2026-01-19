@@ -621,7 +621,7 @@ border-radius: 27px;
 .navbar-content {
     display: flex;
     align-items: center;
-    justify-content: center;
+    justify-content: space-between;
     position: relative;
 }
 
@@ -2200,6 +2200,10 @@ body {
     align-items: center;
     gap: 0.25rem;
     margin-bottom: 0.25rem;
+    display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 8px 0;
 }
 
 .client-rating i {
