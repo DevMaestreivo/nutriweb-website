@@ -1,3 +1,4 @@
+
 /**********************************************
  * SECTION 1 — FILTER REVIEWS
  **********************************************/
@@ -58,6 +59,7 @@ const packages = {
 
 // Promo codes
 const promoCodes = {
+    'RAMADAN2026': { discount: 40, description: 'عرض رمضان المبارك 🌙', applicable: ['standard', 'pro', 'vip'] },
     'PRO30': { discount: 30, description: 'خصم 30% لباقة PRO', applicable: ['pro'] },
     'VIP25': { discount: 25, description: 'خصم 25% للباقة VIP', applicable: ['vip'] },
     'STANDARD35': { discount: 35, description: 'خصم 35% للباقة STANDARD', applicable: ['standard'] }
@@ -71,11 +73,59 @@ let appliedDiscount = null;
 const promoInput = document.getElementById('promoInput');
 const applyBtn = document.getElementById('applyBtn');
 const message = document.getElementById('message');
-const btnText = applyBtn.querySelector('.btn-text');
+const btnText = applyBtn ? applyBtn.querySelector('.btn-text') : null;
 const codesGrid = document.getElementById('codesGrid');
 
+// Check if it's Ramadan month
+function isRamadanMonth() {
+    const now = new Date();
+    const month = now.getMonth() + 1; // JavaScript months are 0-indexed
+    const year = now.getFullYear();
+    
+    // Ramadan 2026 is approximately February 28 - March 29
+    // Adjust these dates as needed
+    if (year === 2026 && (month === 2 || month === 3)) {
+        const day = now.getDate();
+        if (month === 2 && day >= 28) return true;
+        if (month === 3 && day <= 29) return true;
+    }
+    
+    return false;
+}
+
+// Show Ramadan banner
+function showRamadanBanner() {
+    const promoSection = document.querySelector('.promo-section');
+    if (promoSection) {
+        const banner = document.createElement('div');
+        banner.className = 'ramadan-banner';
+        banner.innerHTML = `
+            <div style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); 
+                        padding: 1rem; 
+                        border-radius: 12px; 
+                        text-align: center; 
+                        margin-bottom: 2rem;
+                        animation: pulse 2s infinite;">
+                <h3 style="color: #fff; margin: 0; font-size: 1.5rem;">
+                    🌙 عرض رمضان الكريم 🌙
+                </h3>
+                <p style="color: rgba(255,255,255,0.9); margin: 0.5rem 0 0 0;">
+                    استخدم كود <strong>RAMADAN2026</strong> للحصول على خصم 40% على جميع الباقات
+                </p>
+            </div>
+        `;
+        promoSection.querySelector('.container').prepend(banner);
+    }
+}
+
 // Initialize
-document.addEventListener('DOMContentLoaded', () => updateAvailableCodes());
+document.addEventListener('DOMContentLoaded', () => {
+    updateAvailableCodes();
+    
+    if (isRamadanMonth()) {
+        showRamadanBanner();
+    }
+});
 
 // Select package
 function selectPackage(packageType) {
@@ -85,7 +135,10 @@ function selectPackage(packageType) {
         option.classList.remove('selected');
     });
 
-    document.querySelector(`[data-package="${packageType}"]`).classList.add('selected');
+    const packageOption = document.querySelector(`[data-package="${packageType}"]`);
+    if (packageOption) {
+        packageOption.classList.add('selected');
+    }
 
     clearDiscount();
     updateAvailableCodes();
@@ -93,6 +146,8 @@ function selectPackage(packageType) {
 
 // Update available promo codes
 function updateAvailableCodes() {
+    if (!codesGrid) return;
+    
     codesGrid.innerHTML = '';
 
     Object.entries(promoCodes).forEach(([code, data]) => {
@@ -121,8 +176,12 @@ function applyPromoCode() {
         return;
     }
 
-    btnText.innerHTML = '<div class="loading"></div>';
-    applyBtn.disabled = true;
+    if (btnText) {
+        btnText.innerHTML = '<div class="loading"></div>';
+    }
+    if (applyBtn) {
+        applyBtn.disabled = true;
+    }
 
     setTimeout(() => {
         if (promoCodes[code]) {
@@ -138,8 +197,12 @@ function applyPromoCode() {
             showMessage('كود الخصم غير صحيح', 'error');
         }
 
-        btnText.textContent = 'تطبيق';
-        applyBtn.disabled = false;
+        if (btnText) {
+            btnText.textContent = 'تطبيق';
+        }
+        if (applyBtn) {
+            applyBtn.disabled = false;
+        }
     }, 1200);
 }
 
@@ -167,6 +230,42 @@ function applyDiscount(percent, code) {
             timestamp: Date.now()
         })
     );
+
+    // Scroll to the selected package card
+    scrollToPackage(selectedPackage);
+}
+
+// Scroll to selected package with smooth animation
+function scrollToPackage(packageType) {
+    setTimeout(() => {
+        // Find the package card in the packages section (not the promo section)
+        const packagesSection = document.querySelector('.packages-section');
+        if (!packagesSection) return;
+        
+        const packageCard = packagesSection.querySelector(`.package-card[data-package="${packageType}"]`);
+        
+        if (packageCard) {
+            // Add highlight effect
+            packageCard.style.transition = 'all 0.3s ease';
+            packageCard.style.transform = 'scale(1.05)';
+            packageCard.style.boxShadow = '0 20px 60px rgba(102, 126, 234, 0.4)';
+            
+            // Scroll to package with offset for better visibility
+            const yOffset = -100; // Offset from top
+            const y = packageCard.getBoundingClientRect().top + window.pageYOffset + yOffset;
+            
+            window.scrollTo({
+                top: y,
+                behavior: 'smooth'
+            });
+            
+            // Remove highlight after animation
+            setTimeout(() => {
+                packageCard.style.transform = 'scale(1)';
+                packageCard.style.boxShadow = '';
+            }, 1500);
+        }
+    }, 600); // Delay to allow success message to show first
 }
 
 // Update package UI discount display
@@ -209,55 +308,7 @@ function contactWithCurrentSelection() {
     window.open(`https://wa.me/201093191277?text=${encodeURIComponent(msg)}`, '_blank');
 }
 
-/**********************************************
- * SECTION 5 — INPUT FORMATTING & AUTO-LOAD
- **********************************************/
-applyBtn.addEventListener('click', applyPromoCode);
-
-promoInput.addEventListener('keypress', e => {
-    if (e.key === 'Enter') applyPromoCode();
-});
-
-promoInput.addEventListener('input', function () {
-    this.value = this.value.toUpperCase();
-});
-
-// Restore discount on page load
-window.addEventListener('load', () => {
-    const saved = sessionStorage.getItem('appliedDiscount');
-    if (!saved) return;
-
-    try {
-        const data = JSON.parse(saved);
-        const hours = (Date.now() - data.timestamp) / 3600000;
-
-        if (hours < 24) {
-            selectedPackage = data.package;
-            appliedDiscount = data;
-
-            selectPackage(selectedPackage);
-            promoInput.value = data.code;
-            updatePackageCardDiscount();
-
-            showMessage(`الكود ${data.code} مطبق بالفعل`, 'success');
-        } else {
-            sessionStorage.removeItem('appliedDiscount');
-        }
-    } catch {
-        sessionStorage.removeItem('appliedDiscount');
-    }
-});
-
-/**********************************************
- * SECTION 6 — MESSAGE ALERTS
- **********************************************/
-function showMessage(text, type) {
-    message.textContent = text;
-    message.className = `message ${type}`;
-    message.classList.add('show');
-
-    setTimeout(() => message.classList.remove('show'), 5000);
-}
+// Contact specific package
 function contactPackage(packageType) {
     const packageData = packages[packageType];
     let message = `السلام عليكم، أريد الاستفسار عن ${packageData.name} بسعر ${packageData.price} جنيه شهرياً`;
@@ -276,4 +327,62 @@ function contactPackage(packageType) {
     const phoneNumber = '201093191277';
     const whatsappUrl = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`;
     window.open(whatsappUrl, '_blank');
+}
+
+/**********************************************
+ * SECTION 5 — INPUT FORMATTING & AUTO-LOAD
+ **********************************************/
+if (applyBtn) {
+    applyBtn.addEventListener('click', applyPromoCode);
+}
+
+if (promoInput) {
+    promoInput.addEventListener('keypress', e => {
+        if (e.key === 'Enter') applyPromoCode();
+    });
+
+    promoInput.addEventListener('input', function () {
+        this.value = this.value.toUpperCase();
+    });
+}
+
+// Restore discount on page load
+window.addEventListener('load', () => {
+    const saved = sessionStorage.getItem('appliedDiscount');
+    if (!saved) return;
+
+    try {
+        const data = JSON.parse(saved);
+        const hours = (Date.now() - data.timestamp) / 3600000;
+
+        if (hours < 24) {
+            selectedPackage = data.package;
+            appliedDiscount = data;
+
+            selectPackage(selectedPackage);
+            if (promoInput) {
+                promoInput.value = data.code;
+            }
+            updatePackageCardDiscount();
+
+            showMessage(`الكود ${data.code} مطبق بالفعل`, 'success');
+        } else {
+            sessionStorage.removeItem('appliedDiscount');
+        }
+    } catch {
+        sessionStorage.removeItem('appliedDiscount');
+    }
+});
+
+/**********************************************
+ * SECTION 6 — MESSAGE ALERTS
+ **********************************************/
+function showMessage(text, type) {
+    if (!message) return;
+    
+    message.textContent = text;
+    message.className = `message ${type}`;
+    message.classList.add('show');
+
+    setTimeout(() => message.classList.remove('show'), 5000);
 }
